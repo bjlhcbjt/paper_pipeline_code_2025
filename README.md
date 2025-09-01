@@ -38,9 +38,5 @@ Applying each pipeline to same datasets
 
 Computing relevant EEG metrics for each pipeline
 
-Comparing results across different analytical choices
-
-Visualizing the distribution of outcomes
-
 # License
 This project is licensed under the BSD 2-Clause License - see the LICENSE file for details.
