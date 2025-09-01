@@ -4,8 +4,11 @@ on N-back working memory task analyses through a comprehensive multiverse approa
 
 # Paper Information
 Title: No Single Best Pipeline: Multiverse Analysis of EEG Preprocessing for N-back Working Memory Tasks
+
 Authors: Huang, et al.
+
 Institution: University of New South Wales, Black Dog Institute
+
 Status: Under Review
 
 # Code Description
@@ -14,11 +17,13 @@ Status: Under Review
 
 # Requirements
 Python Environment: Python 3.7 or higher
+
 Required package
-Numpy
-OS
-MNE (for EEG processing)
-AUTOREJECT
+
+- Numpy
+- OS
+- MNE (for EEG processing)
+- AUTOREJECT
 
 # Data Requirements
 EEG data should be in standard formats supported by MNE-Python (e.g., .mat .fif, .edf, .bdf)
@@ -28,9 +33,13 @@ The original EEG dataset used in this study is not included in this repository d
 
 # Methodology
 This code implements a multiverse analysis approach by:
+
 Applying each pipeline to same datasets
+
 Computing relevant EEG metrics for each pipeline
+
 Comparing results across different analytical choices
+
 Visualizing the distribution of outcomes
 
 # License
