@@ -69,13 +69,15 @@ epochs_clean = epochs_clean.interpolate_bads(reset_bads=False)
 
 filt_raw = epochs_clean.copy().set_eeg_reference("average")
 
+picks_ica = mne.pick_types(epochs_clean.info, eeg=True, exclude='bads')
+
 # create ICA Epochs
 ica = mne.preprocessing.ICA(max_iter="auto", method="infomax", 
                             random_state=97, fit_params=dict(extended=True) )
-ica.fit(filt_raw)     # [~reject_log.bad_epochs]
+ica.fit(filt_raw, picks=picks_ica)     # [~reject_log.bad_epochs]
 
 # ICLabel classification and artifact rejection
-proba = iclabel_label_components(filt_raw, ica)  # (n_components, 7)
+labels, proba = iclabel_label_components(filt_raw, ica)  # (n_components, 7)
 brain_p = proba[:, 0]             
 pred_k  = proba.argmax(axis=1)    
 max_p   = proba.max(axis=1)       
