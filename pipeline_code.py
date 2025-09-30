@@ -77,7 +77,7 @@ ica = mne.preprocessing.ICA(max_iter="auto", method="infomax",
 ica.fit(filt_raw, picks=picks_ica)     # [~reject_log.bad_epochs]
 
 # ICLabel classification and artifact rejection
-labels, proba = iclabel_label_components(filt_raw, ica)  # (n_components, 7)
+proba = iclabel_label_components(filt_raw, ica)  # (n_components, 7)
 brain_p = proba[:, 0]             
 pred_k  = proba.argmax(axis=1)    
 max_p   = proba.max(axis=1)       
