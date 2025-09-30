@@ -61,7 +61,7 @@ good_epochs_indices = list(set(range(len(epochs))) - set(rejected_epochs_custom.
 epochs_clean = epochs[good_epochs_indices]
 
 # Interpolate bad channels
-epochs_clean = epochs_clean.interpolate_bads(reset_bads=True) 
+epochs_clean = epochs_clean.interpolate_bads(reset_bads=False) 
 
 # ICA
 # if using 1Hz_ICA option denote this row
