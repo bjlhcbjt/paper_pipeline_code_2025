@@ -100,6 +100,8 @@ for i, (k, pmax, pbrain) in enumerate(zip(pred_k, max_p, brain_p)):
 ica.exclude = np.array(exclude_idx, dtype=int)
 epochs_ica = ica.apply(epochs_clean.copy(), exclude=ica.exclude)
 
+epochs_ica.info['bads'] = []
+
 # Reference: REST or CAR (choose one option)
 # REST re-reference
 from mne.datasets import fetch_fsaverage
